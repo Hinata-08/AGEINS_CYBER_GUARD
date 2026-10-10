@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGEINS Cyber Guard | Multi-Source Cyber Threat & Deepfake Detection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <a href="index.html" class="logo-container">
+            <div class="logo-shield-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="logo">AGEINS<span>CYBER GUARD</span></div>
+        </a>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="threat.html">Threat Detection</a>
+            <a href="dashboard.html">User Dashboard</a>
+            <a href="admin.html">Organiser Portal</a>
+        </nav>
+        <div class="nav-actions">
+            <!-- Real-Time Clock Navbar Badge -->
+            <div class="nav-time-badge" id="navRealtimeClock">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span id="clockTimeStr">--:--:--</span>
+            </div>
+            
+            <div id="navAuthGate">
+                <button class="secondary-btn" onclick="openAuthModal('login')" style="padding: 6px 14px; font-size: 13px;">Sign In</button>
+                <button class="primary-btn" onclick="openAuthModal('register')" style="padding: 6px 14px; font-size: 13px;">Get Started</button>
+            </div>
+            <div id="navUserBadge" style="display: none;">
+                <span class="user-chip" id="userChipName">User</span>
+                <button class="secondary-btn" onclick="logoutUser()" style="padding: 4px 10px; font-size: 12px;">Sign Out</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Home Hero Section -->
+    <main class="home">
+        <section class="hero">
+            <div class="hero-content">
+                <div class="tag">AI-POWERED MULTI-SOURCE CYBERSECURITY &amp; DEEPFAKE FORENSICS</div>
+                <h1>
+                    Universal Protection Against
+                    <span>Phishing, Deepfakes &amp; Fraud</span>
+                </h1>
+                <p class="description">
+                    AGEINS safeguards users and organizations against phishing links, malicious emails, deepfake images/videos, voice-cloning scams, payment QR fraud, and bank details scams.
+                </p>
+                <div class="hero-buttons">
+                    <a href="threat.html" class="primary-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Launch Threat Scanner
+                    </a>
+                    <a href="dashboard.html" class="secondary-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> User Dashboard
+                    </a>
+                    <a href="admin.html" class="secondary-btn" style="border-color: rgba(239, 68, 68, 0.4); color: #fca5a5;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Organiser Portal
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Security Card -->
+            <div class="security-card">
+                <div class="shield-pulse-box">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h2>AGEINS Cyber Engine Active</h2>
+                <p>Continuous Multi-Source Telemetry &amp; Forensics</p>
+                
+                <div class="telemetry-mini-grid">
+                    <div class="telemetry-item">
+                        <small>Active Detectors</small>
+                        <strong>7 Specialized Dashboards</strong>
+                    </div>
+                    <div class="telemetry-item">
+                        <small>Privacy Shield</small>
+                        <strong>PBKDF2 Zero-Knowledge</strong>
+                    </div>
+                    <div class="telemetry-item">
+                        <small>Deepfake Forensics</small>
+                        <strong>Trust Mismatch Engine</strong>
+                    </div>
+                    <div class="telemetry-item">
+                        <small>Organiser Portal</small>
+                        <strong>Secure User Data Access</strong>
+                    </div>
+                </div>
+
+                <div class="status" style="margin-top: 20px; font-size: 13px; color: var(--success); font-weight: 700; display: flex; align-items: center; gap: 6px;">
+                    <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--success); display: inline-block;"></span> Real-Time Multi-Source Engine Live
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Showcase Section -->
+        <section class="features" id="features">
+            <h2>7 Specialized Cyber Threat Detection Dashboards</h2>
+            <p class="section-text">
+                Comprehensive security mechanisms engineered to analyze, detect, and neutralize modern cyber threats across all mediums.
+            </p>
+
+            <div class="features-container">
+                <!-- Feature 1 -->
+                <div class="feature-card" onclick="location.href='threat.html?tab=url'">
+                    <div class="feature-icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <h3>Phishing &amp; Lookalike URLs</h3>
+                    <p>Detect typosquatting, suspicious TLDs, entropy anomalies, and credential harvesting domains before opening them.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card" onclick="location.href='threat.html?tab=email'">
+                    <div class="feature-icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <h3>Malicious Emails &amp; Messages</h3>
+                    <p>Analyze emails and SMS for social engineering lures, urgent banking threats (SBI/KYC scams), and SPF/DKIM/DMARC headers.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card" onclick="location.href='threat.html?tab=trust_mismatch'">
+                    <div class="feature-icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </div>
+                    <h3>Trust Mismatch Deepfake Detector</h3>
+                    <p>Identify facial lip sync vs audio pitch mismatches, 2D FFT spectral phase artifacts, and temporal inter-frame lighting jitter.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card" onclick="location.href='threat.html?tab=deepfake_media'">
+                    <div class="feature-icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <h3>Deepfake Image, Audio &amp; Video</h3>
+                    <p>Inspect synthetic images via ELA compression error analysis, voice clones via silence noise floor, and video keyframes.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card" onclick="location.href='threat.html?tab=payment_qr'">
+                    <div class="feature-icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    </div>
+                    <h3>Payment QR Code / Fake Scanner</h3>
+                    <p>Detect fake payment QR codes, disguised VPA refund lures, auto-debit recurring mandate payloads, and malicious payment links.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card" onclick="location.href='threat.html?tab=bank_details'">
+                    <div class="feature-icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v4M12 14v4M16 14v4"/></svg>
+                    </div>
+                    <h3>Fraud Bank Details &amp; Payment Detector</h3>
+                    <p>Validate IFSC codes against RBI database rules, account number checksums, VPA handles, and advance-fee money mule scams.</p>
+                </div>
+
+                <!-- Feature 7 -->
+                <div class="feature-card" onclick="location.href='threat.html?tab=phone_number'">
+                    <div class="feature-icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <h3>Fraud Phone Number &amp; SMS Detector</h3>
+                    <p>Evaluate call/SMS spam probability, virtual VoIP ranges, courier address scams, and electricity bill disconnection threats.</p>
+                </div>
+
+                <!-- Feature 8 -->
+                <div class="feature-card" onclick="location.href='admin.html'">
+                    <div class="feature-icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    </div>
+                    <h3>Organiser User Data &amp; Security</h3>
+                    <p>Organiser side access storing user login information securely. Accessible only by Organiser ID and password.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Authentication Modal -->
+    <div class="modal-backdrop" id="authModal" onclick="if(event.target===this)closeAuthModal()">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeAuthModal()">&times;</button>
+            <h2 id="modalTitle">Sign In to AGEINS</h2>
+            <p id="modalSub">Enter your credentials to perform threat scans and save your details.</p>
+
+            <div class="auth-tabs">
+                <button id="authTabLogin" class="active" onclick="switchAuthTab('login')">Sign In</button>
+                <button id="authTabRegister" onclick="switchAuthTab('register')">Create Account</button>
+            </div>
+
+            <div id="usernameField" style="display: none; margin-top: 14px;">
+                <label class="input-label">Full Name / Username:</label>
+                <input type="text" id="authUsernameInput" class="scan-textarea" style="height: 42px;" placeholder="John Doe">
+            </div>
+
+            <div style="margin-top: 14px;">
+                <label class="input-label">Email Address:</label>
+                <input type="email" id="authEmailInput" class="scan-textarea" style="height: 42px;" placeholder="user@example.com (or admin@ageins.com)">
+            </div>
+
+            <div style="margin-top: 14px;">
+                <label class="input-label">Password:</label>
+                <input type="password" id="authPasswordInput" class="scan-textarea" style="height: 42px;" placeholder="••••••••">
+            </div>
+
+            <div id="authErrMsg" class="error-msg" style="display: none;"></div>
+
+            <button class="primary-btn" id="authSubmitBtn" onclick="submitAuthForm()" style="width: 100%; margin-top: 20px;">
+                Sign In
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer Privacy Policy Modal -->
+    <div class="modal-backdrop" id="privacyPolicyModal" onclick="if(event.target===this)closePrivacyModal()">
+        <div class="modal-box" style="max-width: 600px;">
+            <button class="modal-close" onclick="closePrivacyModal()">&times;</button>
+            <h2 style="color: var(--lavender); margin-bottom: 8px;">Privacy Policy &amp; Zero-Knowledge Protection</h2>
+            <p style="color: var(--text-muted); font-size: 13.5px; line-height: 1.6; margin-bottom: 16px;">
+                AGEINS Cyber Guard is committed to user data privacy and zero-knowledge security:
+            </p>
+            <ul style="color: var(--text-main); font-size: 13px; line-height: 1.7; margin-left: 18px; margin-bottom: 20px;">
+                <li><strong>Client-Side PII Protection:</strong> Personally identifiable data (phone numbers, bank accounts) are automatically masked prior to processing.</li>
+                <li><strong>Cryptographic Password Hashing:</strong> Passwords are protected using PBKDF2-HMAC-SHA256 with unique 16-byte random salts.</li>
+                <li><strong>Organiser Security Controls:</strong> User login records are accessible strictly via authorized Organiser credentials.</li>
+                <li><strong>Ephemeral File Handling:</strong> Uploaded media evidence is processed in RAM and automatically scrubbed after forensic analysis.</li>
+            </ul>
+            <button class="primary-btn" onclick="closePrivacyModal()" style="width: 100%;">Acknowledge &amp; Close</button>
+        </div>
+    </div>
+
+    <!-- Footer Cyber Safety Guidelines Modal -->
+    <div class="modal-backdrop" id="safetyGuidelinesModal" onclick="if(event.target===this)closeSafetyModal()">
+        <div class="modal-box" style="max-width: 600px;">
+            <button class="modal-close" onclick="closeSafetyModal()">&times;</button>
+            <h2 style="color: var(--lavender); margin-bottom: 8px;">Cyber Safety &amp; Fraud Prevention Guidelines</h2>
+            <p style="color: var(--text-muted); font-size: 13.5px; line-height: 1.6; margin-bottom: 16px;">
+                Follow these 5 golden rules to protect yourself against financial fraud and deepfake scams:
+            </p>
+            <ol style="color: var(--text-main); font-size: 13px; line-height: 1.7; margin-left: 18px; margin-bottom: 20px;">
+                <li><strong>Never Share OTPs or PINs:</strong> No bank official or government authority will ever ask for your UPI PIN or OTP.</li>
+                <li><strong>PIN is ONLY for Sending Money:</strong> You never need to enter a UPI PIN to RECEIVE money or claim cashbacks.</li>
+                <li><strong>Verify VPA Handles:</strong> Double-check recipient VPA names on your banking screen before confirming payments.</li>
+                <li><strong>Double-Check Deepfake Calls:</strong> Verify voice calls or video requests via an independent phone call before wiring money.</li>
+                <li><strong>Report Immediately to 1930:</strong> Report financial fraud within 24 hours to the National Cybercrime Helpline 1930.</li>
+            </ol>
+            <button class="primary-btn" onclick="closeSafetyModal()" style="width: 100%;">Close Guidelines</button>
+        </div>
+    </div>
+
+    <!-- Unified Dark Purple Footer -->
+    <footer class="cyber-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> AGEINS Cyber Guard
+                </h2>
+                <p>Your Digital Safety, Our Priority.</p>
+                <p>Detect suspicious links, phishing attempts, deepfakes, payment QR fraud, and bank scams.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Navigation</h3>
+                <a href="index.html">Home</a>
+                <a href="threat.html">Threat Scanner</a>
+                <a href="dashboard.html">User Dashboard</a>
+                <a href="admin.html">Organiser Portal</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Security &amp; Helpline</h3>
+                <button type="button" class="footer-btn-link" onclick="openPrivacyModal()">Privacy Policy</button>
+                <button type="button" class="footer-btn-link" onclick="openSafetyModal()">Cyber Safety Guidelines</button>
+                <a href="https://cybercrime.gov.in/" target="_blank" rel="noopener">National Cybercrime Portal</a>
+                <a href="tel:1930">Emergency Helpline: 1930</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Stay Alert. Stay Secure.</p>
+            <p>© 2026 AGEINS Cyber Guard Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html>

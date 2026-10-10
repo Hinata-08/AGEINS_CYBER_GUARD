@@ -1,0 +1,101 @@
+text,label,category
+"https://paypal-security-update-994.xyz/login",1,phishing_url
+"https://secure-login-chase-verification.net/auth",1,phishing_url
+"http://sbi-online-kyc-update2026.top/verify",1,phishing_url
+"http://netflix-billing-reactivate-account.xyz/update",1,phishing_url
+"https://wellsfargo-online-security-check.icu/signin",1,phishing_url
+"http://appleid-recover-credentials-support.buzz/verify",1,phishing_url
+"https://hdfc-bank-netbanking-portal.club/login.php",1,phishing_url
+"http://amazon-prime-account-suspended-action.monster/auth",1,phishing_url
+"https://binance-wallet-withdrawal-security.work/kyc",1,phishing_url
+"http://google-drive-shared-doc-view9812.cf/login",1,phishing_url
+"http://facebook-security-checkpoint-reset.ga/checkpoint",1,phishing_url
+"http://coinbase-auth-token-recovery.surf/signin",1,phishing_url
+"http://192.168.1.100/admin/secure/login.html",1,phishing_url
+"https://meta-business-suite-appeals-support.top/submit",1,phishing_url
+"http://whatsapp-web-synchronize-session.buzz/pair",1,phishing_url
+"https://microsoft-office365-password-reset.work/login",1,phishing_url
+"http://dropbox-encrypted-file-view-invoice.xyz/dl",1,phishing_url
+"https://instagram-copyright-infringement-center.top/form",1,phishing_url
+"http://icici-bank-rewards-points-claim.site/redeem",1,phishing_url
+"http://airtel-5g-sim-upgrade-free-kyc.top/reg",1,phishing_url
+"https://steam-community-free-wallet-codes.xyz/gift",1,phishing_url
+"http://roblox-free-robux-generator-hack.top/auth",1,phishing_url
+"https://discord-nitro-gift-claim-free3months.xyz/nitro",1,phishing_url
+"http://uber-driver-payout-verification-update.buzz/login",1,phishing_url
+"https://gov-tax-refund-claim-portal-irs.click/form",1,phishing_url
+"http://spotify-premium-lifetime-free-activation.xyz/sub",1,phishing_url
+"http://chase-bank-alert-verify-identity-ssn.top/auth",1,phishing_url
+"https://bofa-online-banking-passcode-reset.xyz/security",1,phishing_url
+"http://telegram-account-verification-code.buzz/auth",1,phishing_url
+"http://axis-bank-unblock-account-kyc2026.top/verify",1,phishing_url
+"URGENT: Your SBI bank account will be blocked within 24 hours. Click here to update KYC immediately: http://bit.ly/sbi-kyc",1,scam_sms
+"Dear customer, your electricity power will be disconnected tonight at 9:30 PM due to unpaid bill. Call electricity officer at 9876543210 immediately.",1,scam_sms
+"Congratulations! You have won Rs 25,00,000 in KBC Kaun Banega Crorepati lucky draw. Contact WhatsApp manager +919988776655 to claim your prize.",1,scam_sms
+"Part time job offer: Earn 3000 to 5000 daily by simply liking YouTube videos and rating hotels on Telegram. No investment required. Join t.me/taskjob",1,scam_sms
+"Your FedEx parcel is stopped at customs clearance due to illegal items. An arrest warrant has been issued by CBI. Join Skype call immediately for verification.",1,scam_sms
+"Final warning: Your PAN card is not linked with your bank account. Avoid Rs 10000 penalty by clicking http://pan-link-gov.xyz now.",1,scam_sms
+"Security Alert: Unauthorized transaction of Rs 49,999 debited from your card. If not done by you, report and cancel immediately by clicking http://card-cancel.xyz",1,scam_sms
+"Hi Mom, I lost my phone and wallet. This is my new temporary number. Please send 10000 Rs urgently via UPI to this vendor QR code.",1,scam_sms
+"Attention employee: HR payroll system update required. Please verify your company Outlook credentials within 2 hours to avoid salary delay.",1,scam_sms
+"Your crypto wallet has been selected for 2.5 ETH airdrop reward. Connect your seed phrase to claim your tokens: http://airdrop-eth-wallet.xyz",1,scam_sms
+"Dear user, your SIM card is blocked by TRAI due to obscene messaging. Contact customer verification desk immediately: 9123456789.",1,scam_sms
+"Work from home opportunity: Earn 50000 per month by reviewing Google maps locations. Telegram contact @vip_earning_daily",1,scam_sms
+"Credit card reward points worth Rs 8,500 expiring today. Redeem cash now into your account: http://rewards-redeem-bank.top",1,scam_sms
+"Emergency police intimation: FIR registered against your IP address for cyber crimes. Respond within 12 hours or face digital arrest.",1,scam_sms
+"Amazon order confirmed: iPhone 15 Pro Max Rs 1,49,900. If you did not place this order, call refund desk 1800-FAKE-HELP.",1,scam_sms
+"Your HDFC debit card has been disabled due to suspicious activity. Click here to verify your 16 digit card number and CVV: http://hdfc-verify.xyz",1,scam_sms
+"Free laptop distribution scheme 2026: Prime minister education reward scheme. Register with Aadhaar to claim laptop: http://pm-laptop-scheme.top",1,scam_sms
+"Income Tax Department Notice: Outstanding refund of Rs 18,450 approved. Provide bank account and netbanking password to credit funds: http://incometax-refund.xyz",1,scam_sms
+"Attention: Your WhatsApp account is reported for community violation. Verify identity in next 10 minutes or your account will be permanently deleted.",1,scam_sms
+"Loan approved: Congratulations, your personal loan of Rs 5,00,000 has been approved at 1% interest. Pay processing fee of Rs 2,500 to disburse loan.",1,scam_sms
+"https://www.google.com",0,legitimate_url
+"https://github.com",0,legitimate_url
+"https://www.wikipedia.org",0,legitimate_url
+"https://microsoft.com",0,legitimate_url
+"https://www.amazon.in",0,legitimate_url
+"https://www.apple.com",0,legitimate_url
+"https://www.youtube.com",0,legitimate_url
+"https://onlinesbi.sbi",0,legitimate_url
+"https://netbanking.hdfcbank.com",0,legitimate_url
+"https://www.icicibank.com",0,legitimate_url
+"https://www.paypal.com",0,legitimate_url
+"https://stackoverflow.com",0,legitimate_url
+"https://openai.com",0,legitimate_url
+"https://www.bput.ac.in",0,legitimate_url
+"https://cybercrime.gov.in",0,legitimate_url
+"https://www.linkedin.com",0,legitimate_url
+"https://www.nytimes.com",0,legitimate_url
+"https://reddit.com",0,legitimate_url
+"https://www.netflix.com",0,legitimate_url
+"https://pypi.org/project/scikit-learn",0,legitimate_url
+"https://developer.mozilla.org",0,legitimate_url
+"https://cloud.google.com",0,legitimate_url
+"https://aws.amazon.com",0,legitimate_url
+"https://www.kaggle.com",0,legitimate_url
+"https://huggingface.co",0,legitimate_url
+"https://fastapi.tiangolo.com",0,legitimate_url
+"https://www.python.org",0,legitimate_url
+"https://hub.docker.com",0,legitimate_url
+"https://gitlab.com",0,legitimate_url
+"https://www.coursera.org",0,legitimate_url
+"Your monthly statement for account ending in 4102 is now available to view in your secure netbanking portal. Thank you for banking with us.",0,safe_message
+"Hi, are we meeting for the project discussion at the college library tomorrow at 3 PM?",0,safe_message
+"Your OTP for login to your account is 482910. Valid for 10 minutes. Do not share OTP with anyone.",0,safe_message
+"Good morning team, the weekly sprint review has been rescheduled to Thursday 11 AM on Google Meet.",0,safe_message
+"Your Swiggy order from Biryani House has been picked up by delivery partner Rajesh. Track delivery live on the app.",0,safe_message
+"Dear Customer, your recharge of Rs 299 is successful. Validity 28 days with 1.5GB daily data. Check balance on Airtel Thanks app.",0,safe_message
+"Hello Swapna, please find attached the semester examination schedule published by BPUT university.",0,safe_message
+"Your Uber ride is arriving in 3 mins. Driver Ramesh (Swift Dzire OD-02-1234). OTP is 3912.",0,safe_message
+"Dear user, your Amazon package was delivered at your doorstep. Please rate your delivery experience.",0,safe_message
+"Reminder: Parent teacher meeting is scheduled for Saturday at 10 AM. All students must attend.",0,safe_message
+"Here is the GitHub repository link for the open source project we discussed yesterday: https://github.com/torvalds/linux",0,safe_message
+"Please review the slide presentation before our client call this afternoon.",0,safe_message
+"Hi professor, I have submitted my assignment on the online student portal. Kindly let me know if any corrections are needed.",0,safe_message
+"Dear customer, your credit card bill of Rs 4,120 has been paid successfully. Available credit limit is Rs 95,880.",0,safe_message
+"Happy birthday Rahul! Wishing you a fantastic year ahead filled with success and happiness.",0,safe_message
+"Your booking for Cinepolis Cinema on Sunday 6 PM is confirmed. Ticket ID: CN-98124.",0,safe_message
+"Thanks for dining with us at Barbeque Nation. Here is your digital receipt.",0,safe_message
+"Your flight 6E-204 from Bhubaneswar to Delhi is on schedule for departure at 08:45 AM from Terminal 1.",0,safe_message
+"Doctor appointment reminder: Dr. Sharma at Apollo Hospital tomorrow at 4:30 PM.",0,safe_message
+"Hey, did you get the notes from yesterday's machine learning class? Please forward them when you are free.",0,safe_message

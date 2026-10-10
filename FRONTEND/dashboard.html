@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Telemetry & Personal Threat History | AGEINS Cyber Guard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <a href="index.html" class="logo-container">
+            <div class="logo-shield-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="logo">AGEINS<span>CYBER GUARD</span></div>
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="threat.html">Threat Detection</a>
+            <a href="dashboard.html" class="active">User Dashboard</a>
+            <a href="admin.html">Organiser Portal</a>
+        </nav>
+        <div class="nav-actions">
+            <!-- Real-Time Clock Navbar Badge -->
+            <div class="nav-time-badge" id="navRealtimeClock">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span id="clockTimeStr">--:--:--</span>
+            </div>
+            
+            <div id="navAuthGate">
+                <button class="secondary-btn" onclick="openAuthModal('login')" style="padding: 6px 14px; font-size: 13px;">Sign In</button>
+                <button class="primary-btn" onclick="openAuthModal('register')" style="padding: 6px 14px; font-size: 13px;">Get Started</button>
+            </div>
+            <div id="navUserBadge" style="display: none;">
+                <span class="user-chip" id="userChipName">User</span>
+                <button class="secondary-btn" onclick="logoutUser()" style="padding: 4px 10px; font-size: 12px;">Sign Out</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-page">
+        <!-- Auth Gate Card for User Dashboard -->
+        <div id="userDashboardAuthGate" class="content-card" style="display: none; max-width: 500px; margin: 60px auto; text-align: center;">
+            <div class="feature-icon-box" style="margin: 0 auto 16px; width: 60px; height: 60px;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h2>Sign In Required</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 14px;">
+                Please sign in or create an account to view your saved personal scan history and threat telemetry.
+            </p>
+            <button class="primary-btn" onclick="openAuthModal('login')" style="width: 100%; margin-bottom: 10px;">
+                Sign In Existing Account
+            </button>
+            <button class="secondary-btn" onclick="openAuthModal('register')" style="width: 100%;">
+                Create New Account
+            </button>
+        </div>
+
+        <div id="userDashboardView">
+            <!-- User Title Banner -->
+            <div class="card-header-flex" style="margin-bottom: 25px;">
+                <div>
+                    <div class="tag">PERSONAL SECURITY TELEMETRY</div>
+                    <h1 style="font-size: 32px; font-weight: 800;">My Cyber Safety Dashboard</h1>
+                    <p style="color: var(--text-secondary); font-size: 15px; margin-top: 4px;">
+                        Review your recent scan history, threat protection metrics, and diagnostic reports.
+                    </p>
+                </div>
+                <div>
+                    <a href="threat.html" class="primary-btn" style="padding: 8px 16px; font-size: 13px;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Launch New Scan
+                    </a>
+                </div>
+            </div>
+
+            <!-- 4 Telemetry Metrics Cards -->
+            <div class="dashboard-metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </div>
+                    <div class="metric-data">
+                        <h4>Total Scans Analyzed</h4>
+                        <div class="metric-number" id="userTotalScans">0</div>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon-box" style="background: rgba(52, 211, 153, 0.12); border-color: var(--success);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div class="metric-data">
+                        <h4>Threats Neutralized</h4>
+                        <div class="metric-number" id="userThreatsPrevented" style="color: #34d399;">0</div>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon-box" style="background: rgba(245, 158, 11, 0.12); border-color: var(--amber);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    </div>
+                    <div class="metric-data">
+                        <h4>Average Risk Score</h4>
+                        <div class="metric-number" id="userAvgScore" style="color: #f59e0b;">0%</div>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-icon-box" style="background: rgba(56, 189, 248, 0.12); border-color: var(--cyan);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    </div>
+                    <div class="metric-data">
+                        <h4>Privacy Mode</h4>
+                        <div class="metric-number" style="color: #38bdf8; font-size: 18px; margin-top: 4px;">PBKDF2 Protected</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Scan History Table -->
+            <div class="content-card">
+                <div class="card-header-flex">
+                    <div>
+                        <h2 style="font-size: 20px;">My Threat Scan History</h2>
+                        <p style="color: var(--text-secondary); font-size: 13.5px;">Chronological record of your previous scans across all 7 threat detectors.</p>
+                    </div>
+                    <button class="secondary-btn" onclick="loadUserDashboard()" style="padding: 6px 12px; font-size: 12.5px;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg> Refresh History
+                    </button>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="cyber-table">
+                        <thead>
+                            <tr>
+                                <th>Scan ID</th>
+                                <th>Vector Category</th>
+                                <th>Target / Payload Preview</th>
+                                <th>Risk Score</th>
+                                <th>Diagnostic Verdict</th>
+                                <th>Status</th>
+                                <th>Timestamp</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userHistoryTableBody">
+                            <tr>
+                                <td colspan="7" style="text-align: center; padding: 25px;">Loading history records...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Authentication Modal -->
+    <div class="modal-backdrop" id="authModal" onclick="if(event.target===this)closeAuthModal()">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeAuthModal()">&times;</button>
+            <h2 id="modalTitle">Sign In to AGEINS</h2>
+            <p id="modalSub">Enter your credentials to perform threat scans and save your details.</p>
+
+            <div class="auth-tabs">
+                <button id="authTabLogin" class="active" onclick="switchAuthTab('login')">Sign In</button>
+                <button id="authTabRegister" onclick="switchAuthTab('register')">Create Account</button>
+            </div>
+
+            <div id="usernameField" style="display: none; margin-top: 14px;">
+                <label class="input-label">Full Name / Username:</label>
+                <input type="text" id="authUsernameInput" class="scan-textarea" style="height: 42px;" placeholder="John Doe">
+            </div>
+
+            <div style="margin-top: 14px;">
+                <label class="input-label">Email Address:</label>
+                <input type="email" id="authEmailInput" class="scan-textarea" style="height: 42px;" placeholder="user@example.com (or admin@ageins.com)">
+            </div>
+
+            <div style="margin-top: 14px;">
+                <label class="input-label">Password:</label>
+                <input type="password" id="authPasswordInput" class="scan-textarea" style="height: 42px;" placeholder="••••••••">
+            </div>
+
+            <div id="authErrMsg" class="error-msg" style="display: none;"></div>
+
+            <button class="primary-btn" id="authSubmitBtn" onclick="submitAuthForm()" style="width: 100%; margin-top: 20px;">
+                Sign In
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer Privacy Policy Modal -->
+    <div class="modal-backdrop" id="privacyPolicyModal" onclick="if(event.target===this)closePrivacyModal()">
+        <div class="modal-box" style="max-width: 600px;">
+            <button class="modal-close" onclick="closePrivacyModal()">&times;</button>
+            <h2 style="color: var(--lavender); margin-bottom: 8px;">Privacy Policy &amp; Zero-Knowledge Protection</h2>
+            <p style="color: var(--text-muted); font-size: 13.5px; line-height: 1.6; margin-bottom: 16px;">
+                AGEINS Cyber Guard is committed to user data privacy and zero-knowledge security:
+            </p>
+            <ul style="color: var(--text-main); font-size: 13px; line-height: 1.7; margin-left: 18px; margin-bottom: 20px;">
+                <li><strong>Client-Side PII Protection:</strong> Personally identifiable data (phone numbers, bank accounts) are automatically masked prior to processing.</li>
+                <li><strong>Cryptographic Password Hashing:</strong> Passwords are protected using PBKDF2-HMAC-SHA256 with unique 16-byte random salts.</li>
+                <li><strong>Organiser Security Controls:</strong> User login records are accessible strictly via authorized Organiser credentials.</li>
+                <li><strong>Ephemeral File Handling:</strong> Uploaded media evidence is processed in RAM and automatically scrubbed after forensic analysis.</li>
+            </ul>
+            <button class="primary-btn" onclick="closePrivacyModal()" style="width: 100%;">Acknowledge &amp; Close</button>
+        </div>
+    </div>
+
+    <!-- Footer Cyber Safety Guidelines Modal -->
+    <div class="modal-backdrop" id="safetyGuidelinesModal" onclick="if(event.target===this)closeSafetyModal()">
+        <div class="modal-box" style="max-width: 600px;">
+            <button class="modal-close" onclick="closeSafetyModal()">&times;</button>
+            <h2 style="color: var(--lavender); margin-bottom: 8px;">Cyber Safety &amp; Fraud Prevention Guidelines</h2>
+            <p style="color: var(--text-muted); font-size: 13.5px; line-height: 1.6; margin-bottom: 16px;">
+                Follow these 5 golden rules to protect yourself against financial fraud and deepfake scams:
+            </p>
+            <ol style="color: var(--text-main); font-size: 13px; line-height: 1.7; margin-left: 18px; margin-bottom: 20px;">
+                <li><strong>Never Share OTPs or PINs:</strong> No bank official or government authority will ever ask for your UPI PIN or OTP.</li>
+                <li><strong>PIN is ONLY for Sending Money:</strong> You never need to enter a UPI PIN to RECEIVE money or claim cashbacks.</li>
+                <li><strong>Verify VPA Handles:</strong> Double-check recipient VPA names on your banking screen before confirming payments.</li>
+                <li><strong>Double-Check Deepfake Calls:</strong> Verify voice calls or video requests via an independent phone call before wiring money.</li>
+                <li><strong>Report Immediately to 1930:</strong> Report financial fraud within 24 hours to the National Cybercrime Helpline 1930.</li>
+            </ol>
+            <button class="primary-btn" onclick="closeSafetyModal()" style="width: 100%;">Close Guidelines</button>
+        </div>
+    </div>
+
+    <!-- Unified Dark Purple Footer -->
+    <footer class="cyber-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h2>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> AGEINS Cyber Guard
+                </h2>
+                <p>Your Digital Safety, Our Priority.</p>
+                <p>Detect suspicious links, phishing attempts, deepfakes, payment QR fraud, and bank scams.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Navigation</h3>
+                <a href="index.html">Home</a>
+                <a href="threat.html">Threat Scanner</a>
+                <a href="dashboard.html">User Dashboard</a>
+                <a href="admin.html">Organiser Portal</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Security &amp; Helpline</h3>
+                <button type="button" class="footer-btn-link" onclick="openPrivacyModal()">Privacy Policy</button>
+                <button type="button" class="footer-btn-link" onclick="openSafetyModal()">Cyber Safety Guidelines</button>
+                <a href="https://cybercrime.gov.in/" target="_blank" rel="noopener">National Cybercrime Portal</a>
+                <a href="tel:1930">Emergency Helpline: 1930</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Stay Alert. Stay Secure.</p>
+            <p>© 2026 AGEINS Cyber Guard Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+</html>
